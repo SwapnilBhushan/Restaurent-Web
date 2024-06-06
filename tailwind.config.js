@@ -1,5 +1,7 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+const withMT = require("@material-tailwind/react/utils/withMT");
+
+export default withMT({
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
@@ -9,6 +11,7 @@ export default {
       },
       backgroundImage: {
         "bg-home": "url('/src/assets/img/bg.jpeg')",
+        "bg-quote": "url('/src/assets/img/img9.jpeg')",
       },
       colors: {
         "custom-overlay": "rgba(40, 27, 16, 0.80)",
@@ -18,4 +21,4 @@ export default {
     },
   },
   plugins: [],
-};
+});

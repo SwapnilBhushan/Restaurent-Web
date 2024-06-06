@@ -21,7 +21,7 @@ const Navbar = () => {
           (item, index) => (
             <div
               key={index}
-              className="text-[2vw] sm:text-[1.5vw] lg:text-[1.4vw] font-semibold text-zinc-100 font-mono hover:scale-105 cursor-pointer"
+              className="text-[2vw] sm:text-[1.5vw] lg:text-[1.4vw] font-semibold text-white font-mono hover:scale-105 cursor-pointer"
             >
               <a>{item}</a>
             </div>
