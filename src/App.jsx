@@ -1,22 +1,28 @@
-import { useState } from "react";
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
-import Navbar from "./components/Navbar/Navbar";
-import LandingPage from "./Pages/LandingPage/LandingPage";
-import AboutUs from "./components/AboutUS/AboutUs";
-import Offer from "./components/Offer/Offer";
-import Reservation from "./components/Reservation/Reservation";
-import Quotes from "./components/Quotes/Quotes";
+import Home from "./Pages/Home/Home";
+import Menu from "./Pages/Menu/Menu";
 
 function App() {
+  const NotFound = () => {
+    return (
+      <div className="w-full h-screen flex items-center justify-center">
+        <h1 className="text-5xl font-bold text-white font-mono">
+          404 Not Found
+        </h1>
+      </div>
+    );
+  };
+
   return (
-    <div className="w-full">
-      <LandingPage />
-      <AboutUs />
-      <Offer />
-      <Reservation />
-      <Quotes />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/menu" element={<Menu />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
